@@ -55,7 +55,6 @@ class KMPComposableAnnotator : Annotator {
 
     private fun highlight(element: PsiElement, holder: AnnotationHolder) {
         if (element !is KtCallExpression) return
-        println("$TAG element is KtCallExpression")
         var analysisResult = holder.currentAnnotationSession.getUserData(
             ANALYSIS_RESULT_KEY
         )
@@ -67,14 +66,11 @@ class KMPComposableAnnotator : Annotator {
             )
         }
         if (analysisResult.isError()) {
-            println("$TAG analysisResult error -> ${analysisResult.error}")
             throw ProcessCanceledException(analysisResult.error)
         }
         val shouldStyle = shouldStyleCall(analysisResult.bindingContext, element)
-        println("$TAG shouldStyle -> $shouldStyle")
         if (!shouldStyle) return
 
-        println("$TAG calleeExpression -> ${element.calleeExpression}")
         val elementToStyle = element.calleeExpression ?: return
 
         holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
@@ -85,7 +81,6 @@ class KMPComposableAnnotator : Annotator {
     @OptIn(IDEAPluginsCompatibilityAPI::class)
     private fun shouldStyleCall(bindingContext: BindingContext, element: KtCallExpression): Boolean {
         val resolved = element.getResolvedCall(bindingContext)
-        println("$TAG resolved -> $resolved")
         return resolved?.isComposableInvocation() == true
     }
 
