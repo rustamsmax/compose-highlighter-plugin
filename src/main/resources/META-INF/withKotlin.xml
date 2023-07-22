@@ -1,0 +1,12 @@
+<idea-plugin>
+
+    <depends>org.jetbrains.kotlin</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <annotator
+            language="kotlin"
+            implementationClass="uz.rsteam.intellij.plugin.KMPComposableAnnotator"
+        />
+    </extensions>
+
+</idea-plugin>

@@ -1,0 +1,26 @@
+<idea-plugin>
+
+    <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+    <id>uz.rsteam.intellij.compose</id>
+
+    <!-- Text to display as name on Preferences/Settings | Plugin page -->
+    <name>Compose Highlighter</name>
+
+    <!-- Product and plugin compatibility requirements -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <depends optional="true" config-file="withKotlin.xml">org.jetbrains.kotlin</depends>
+
+    <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+    <vendor url="https://compose-highlighter-plugin.github.io/">Rustam Samandarov</vendor>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <annotator
+            language="JAVA"
+            implementationClass="uz.rsteam.intellij.plugin.KMPComposableAnnotator"
+        />
+    </extensions>
+
+</idea-plugin>
