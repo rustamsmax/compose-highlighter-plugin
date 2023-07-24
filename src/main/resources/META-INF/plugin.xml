@@ -13,7 +13,7 @@
     <depends optional="true" config-file="withKotlin.xml">org.jetbrains.kotlin</depends>
 
     <!-- Text to display as company information on Preferences/Settings | Plugin page -->
-    <vendor url="https://compose-highlighter-plugin.github.io/">Rustam Samandarov</vendor>
+    <vendor url="https://github.com/rustamsmax">Rustam Samandarov</vendor>
 
     <extensions defaultExtensionNs="com.intellij">
 

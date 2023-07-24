@@ -33,7 +33,7 @@ import org.jetbrains.kotlin.utils.IDEAPluginsCompatibilityAPI
 class KMPComposableAnnotator : Annotator {
     companion object TextAttributeRegistry {
         val COMPOSABLE_CALL_TEXT_ATTRIBUTES_KEY: TextAttributesKey
-        val COMPOSABLE_CALL_TEXT_ATTRIBUTES_NAME = "ComposableCallTextAttributes"
+        private const val COMPOSABLE_CALL_TEXT_ATTRIBUTES_NAME = "ComposableCallTextAttributes"
         private val ANALYSIS_RESULT_KEY = Key<AnalysisResult>(
             "ComposableAnnotator.DidAnnotateKey"
         )
@@ -50,8 +50,6 @@ class KMPComposableAnnotator : Annotator {
     override fun annotate(element: PsiElement, holder: AnnotationHolder) {
         highlight(element, holder)
     }
-
-    private val TAG = "COMPOSABLE ANNOTATION"
 
     private fun highlight(element: PsiElement, holder: AnnotationHolder) {
         if (element !is KtCallExpression) return
@@ -85,7 +83,6 @@ class KMPComposableAnnotator : Annotator {
     }
 
     private fun ResolvedCall<*>.isComposableInvocation(): Boolean {
-        println("$TAG checking -> ${this.javaClass}")
         if (this is VariableAsFunctionResolvedCall) {
             if (variableCall.candidateDescriptor.type.hasComposableAnnotation())
                 return true
