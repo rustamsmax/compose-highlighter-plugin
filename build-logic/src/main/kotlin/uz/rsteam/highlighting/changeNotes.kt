@@ -9,6 +9,11 @@ import java.time.Month
 val pluginChangeNotes = ChangeNotes(
     releases = listOf(
         Release(
+            version = SemVer(1, 0, 1),
+            date = LocalDate.of(2023, Month.JULY, 24),
+            notes = listOf()
+        ),
+        Release(
             version = SemVer(1, 0, 0),
             date = LocalDate.of(2023, Month.JULY, 22),
             notes = listOf()

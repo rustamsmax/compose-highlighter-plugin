@@ -15,7 +15,7 @@ plugins {
 }
 
 group = "uz.rsteam.intellij.plugin"
-version = "1.0.0"
+version = "1.0.1"
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
