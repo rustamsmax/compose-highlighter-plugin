@@ -1,5 +1,16 @@
 rootProject.name = "highlighting"
 
 pluginManagement {
-    includeBuild("build-logic")
+  repositories {
+    google()
+    gradlePluginPortal()
+    mavenCentral()
+  }
 }
+dependencyResolutionManagement {
+  repositories {
+    google()
+    mavenCentral()
+  }
+}
+includeBuild("build-logic")
