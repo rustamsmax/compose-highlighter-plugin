@@ -26,7 +26,7 @@ tasks.buildSearchableOptions {
 tasks.patchPluginXml {
     version.set(project.version.toString())
     sinceBuild.set("211")
-//    untilBuild.set("233.*")
+    untilBuild.set("233.*")
     pluginDescription.set(uz.rsteam.highlighting.description)
     changeNotes.set(pluginChangeNotes.toHtml())
 }

@@ -1,3 +1,4 @@
+
 rootProject.name = "highlighting"
 
 pluginManagement {

@@ -1,7 +1,7 @@
 plugins {
     id("uz.rsteam.highlighting")
-    id("org.jetbrains.intellij") version "1.16.1" apply false
-    id("org.jetbrains.kotlin.jvm") version "1.9.21" apply false
+//    id("org.jetbrains.kotlin.jvm") version "1.9.21" apply false
+    kotlin("jvm") version "1.9.21"
 }
 
 repositories {
@@ -19,14 +19,13 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
 }
 
-/*tasks.compileKotlin {
-    kotlinOptions.jvmTarget = "17"
-}
-
-tasks.compileTestKotlin {
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = "17"
 }
 
 tasks.buildSearchableOptions {
     enabled = false
-}*/
+}
+kotlin {
+    jvmToolchain(17)
+}
