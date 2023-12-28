@@ -10,11 +10,11 @@ plugins {
 }
 
 group = "uz.rsteam.intellij.plugin"
-version = "1.0.5"
+version = "1.1.0"
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version.set("2022.3")
+    version.set("2023.3")
     plugins.set(listOf("java", "Kotlin"))
     type.set("IC")
 }

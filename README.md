@@ -1,1 +1,1 @@
-@Composable highlighter
+@Composable function call highlighter and compose Color editor (gutter)

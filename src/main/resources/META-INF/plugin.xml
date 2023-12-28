@@ -21,6 +21,7 @@
             language="JAVA"
             implementationClass="uz.rsteam.intellij.plugin.KMPComposableAnnotator"
         />
+        <colorProvider implementation="uz.rsteam.intellij.plugin.color.preview.ComposeColorProvider"/>
     </extensions>
 
 </idea-plugin>
