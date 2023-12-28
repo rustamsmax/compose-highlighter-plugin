@@ -13,7 +13,4 @@ dependencies {
   implementation(libs.kotlin.intellij.plugin)
   implementation(libs.kotlin.gradle.plugin)
   implementation(libs.jetbrains.compose.plugin)
-
-  compileOnly(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
-
 }

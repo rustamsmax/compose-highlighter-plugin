@@ -10,18 +10,19 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
 
-    <depends optional="true" config-file="withKotlin.xml">org.jetbrains.kotlin</depends>
+    <depends config-file="withKotlin.xml" optional="true">org.jetbrains.kotlin</depends>
 
     <!-- Text to display as company information on Preferences/Settings | Plugin page -->
     <vendor url="https://rustamsmax.github.io/">Rustam Samandarov</vendor>
 
     <extensions defaultExtensionNs="com.intellij">
 
-        <annotator
-            language="JAVA"
-            implementationClass="uz.rsteam.intellij.plugin.KMPComposableAnnotator"
-        />
-        <colorProvider implementation="uz.rsteam.intellij.plugin.color.preview.ComposeColorProvider"/>
+        <annotator implementationClass="uz.rsteam.intellij.plugin.KMPComposableAnnotator"
+            language="kotlin" />
+
+        <colorProvider
+            implementation="uz.rsteam.intellij.plugin.color.preview.ComposeColorProvider" />
+
     </extensions>
 
 </idea-plugin>

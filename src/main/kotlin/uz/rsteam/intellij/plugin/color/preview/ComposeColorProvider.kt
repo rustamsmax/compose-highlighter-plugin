@@ -17,6 +17,7 @@ import org.jetbrains.kotlin.psi.KtNameReferenceExpression
 import org.jetbrains.kotlin.psi.KtPrefixExpression
 import org.jetbrains.kotlin.psi.KtPsiFactory
 import org.jetbrains.kotlin.psi.KtReferenceExpression
+import org.jetbrains.kotlin.psi.KtTypeReference
 import org.jetbrains.kotlin.psi.KtValueArgument
 import org.jetbrains.kotlin.psi.psiUtil.astReplace
 import org.jetbrains.kotlin.resolve.constants.evaluate.ConstantExpressionEvaluator
@@ -65,7 +66,7 @@ class ComposeColorProvider : ElementColorProvider {
 
       is KtValueArgument,
       is KtDotQualifiedExpression -> {
-        val reference = element.parent.reference?.resolve()?.children?.get(0)
+        val reference = element.parent.reference?.resolve()?.children?.lastOrNull()
         if (reference is KtCallExpression)
           return reference
       }
