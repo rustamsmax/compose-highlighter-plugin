@@ -368,7 +368,7 @@ class ComposeColorProvider : ElementColorProvider {
       "Acescg" -> ComposeColorSpaces.Acescg
       "CieXyz" -> ComposeColorSpaces.CieXyz
       "CieLab" -> ComposeColorSpaces.CieLab
-      "Unspecified" -> ComposeColorSpaces.Unspecified
+//      "Unspecified" -> ComposeColorSpaces.Unspecified
       "Oklab" -> ComposeColorSpaces.Oklab
       else -> null
     }
